@@ -487,9 +487,15 @@ public class GetRecommendationsRequest extends AbstractDataRequest<Recommendatio
      * @see <a href="https://developer.spotify.com/documentation/web-api/concepts/spotify-uris-ids">Spotify URIs &amp; IDs</a>
      */
     public Builder seed_artists(final String seed_artists) {
-      assert (seed_artists != null);
-      assert (seed_artists.split(",").length <= 5);
-      return setQueryParameter("seed_artists", seed_artists);
+//      assert (seed_artists != null);
+//      assert (seed_artists.split(",").length <= 5);
+//      return setQueryParameter("seed_artists", seed_artists);
+      if (seed_artists != null) {
+        assert (seed_artists.split(",").length <= 5);
+        return setQueryParameter("seed_artists", seed_artists);
+      }
+      // If seed_artists is null, simply return the builder without setting the parameter.
+      return this;
     }
 
     /**
@@ -515,9 +521,15 @@ public class GetRecommendationsRequest extends AbstractDataRequest<Recommendatio
      * @see <a href="https://developer.spotify.com/documentation/web-api/concepts/spotify-uris-ids">Spotify URIs &amp; IDs</a>
      */
     public Builder seed_tracks(final String seed_tracks) {
-      assert (seed_tracks != null);
-      assert (seed_tracks.split(",").length <= 5);
-      return setQueryParameter("seed_tracks", seed_tracks);
+//      assert (seed_tracks != null);
+//      assert (seed_tracks.split(",").length <= 5);
+//      return setQueryParameter("seed_tracks", seed_tracks);
+      if (seed_tracks != null) {
+        assert (seed_tracks.split(",").length <= 5);
+        return setQueryParameter("seed_tracks", seed_tracks);
+      }
+      // If seed_tracks is null, simply return the builder without setting the parameter.
+      return this;
     }
 
     /**
